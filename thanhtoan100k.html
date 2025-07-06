@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Xác nhận Thanh Toán</title>
+    <!-- Thêm Firebase SDK Libraries -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+    <script>
+        // Cấu hình Firebase Project của bạn
+        // LƯU Ý QUAN TRỌNG: Bạn sẽ lấy cấu hình này từ Firebase Console của project của mình
+        // Đi tới Project settings (biểu tượng bánh răng cưa) -> Your apps -> Web app
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "tru-bom-xang-tu-dong", // Đây là Project ID của bạn!
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID",
+            databaseURL: "https://tru-bom-xang-tu-dong-default-rtdb.firebaseio.com" // URL của RTDB của bạn
+        };
+
+        // Khởi tạo Firebase
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
+        // Hàm để cập nhật giá trị
+        function updateThanhToan() {
+            // IMPORTANT: Before updating, you should consider adding Firebase Authentication
+            // to ensure only authorized users/devices can trigger this update.
+            // For demonstration, we're directly updating.
+
+            const thanhToanRef = database.ref('thanh_toan_100k'); // Đường dẫn đến node 'thanh toan'
+
+            thanhToanRef.set(1)
+                .then(() => {
+                    document.getElementById('status').innerText = 'Thanh toán đã được cập nhật thành 1 thành công!';
+                    console.log("Giá trị 'thanh_toan_100k' đã được cập nhật thành 1.");
+                })
+                .catch((error) => {
+                    document.getElementById('status').innerText = 'Lỗi khi cập nhật thanh toán: ' + error.message;
+                    console.error("Lỗi khi cập nhật giá trị 'thanh_toan_100k':", error);
+                });
+        }
+
+        // Gọi hàm cập nhật khi trang được tải
+        window.onload = updateThanhToan;
+    </script>
+</head>
+<body>
+    <h1>Đang xử lý yêu cầu...</h1>
+    <p id="status">Vui lòng đợi...</p>
+    <p>Nếu bạn thấy thông báo lỗi, hãy kiểm tra kết nối internet và quyền truy cập.</p>
+</body>
+</html>
