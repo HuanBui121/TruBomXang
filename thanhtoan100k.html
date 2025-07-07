@@ -10,7 +10,7 @@
         const firebaseConfig = {
             apiKey: "YOUR_API_KEY",
             authDomain: "YOUR_AUTH_DOMAIN",
-            projectId: "tru-bom-xang-tu-dong", // Đây là Project ID của bạn!
+            projectId: "tru-bom-xang-tu-dong",
             storageBucket: "YOUR_STORAGE_BUCKET",
             messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
             appId: "YOUR_APP_ID",
@@ -23,9 +23,7 @@
 
         // Hàm để cập nhật giá trị
         function updateThanhToan() {
-            // IMPORTANT: Before updating, you should consider adding Firebase Authentication
-            // to ensure only authorized users/devices can trigger this update.
-            // For demonstration, we're directly updating.
+
 
             const thanhToanRef = database.ref('thanh_toan_100k'); // Đường dẫn đến node 'thanh toan'
 
