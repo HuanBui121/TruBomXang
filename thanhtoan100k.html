@@ -6,9 +6,7 @@
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
     <script>
-        // Cấu hình Firebase Project của bạn
-        // LƯU Ý QUAN TRỌNG: Bạn sẽ lấy cấu hình này từ Firebase Console của project của mình
-        // Đi tới Project settings (biểu tượng bánh răng cưa) -> Your apps -> Web app
+     
         const firebaseConfig = {
             apiKey: "YOUR_API_KEY",
             authDomain: "YOUR_AUTH_DOMAIN",
@@ -33,7 +31,7 @@
 
             thanhToanRef.set(1)
                 .then(() => {
-                    document.getElementById('status').innerText = 'Thanh toán đã được cập nhật thành 1 thành công!';
+                    document.getElementById('status').innerText = 'Thanh toán đã được cập nhật thành công!';
                     console.log("Giá trị 'thanh_toan_100k' đã được cập nhật thành 1.");
                 })
                 .catch((error) => {
