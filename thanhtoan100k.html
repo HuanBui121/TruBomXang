@@ -30,11 +30,11 @@
             thanhToanRef.set(1)
                 .then(() => {
                     document.getElementById('status').innerText = 'Thanh toán đã được cập nhật thành công!';
-                    console.log("Giá trị 'thanh_toan_100k' đã được cập nhật thành 1.");
+                    console.log("Giá trị đã được cập nhật thành công.");
                 })
                 .catch((error) => {
                     document.getElementById('status').innerText = 'Lỗi khi cập nhật thanh toán: ' + error.message;
-                    console.error("Lỗi khi cập nhật giá trị 'thanh_toan_100k':", error);
+                    console.error("Lỗi khi cập nhật giá trị thanh toán:", error);
                 });
         }
 
