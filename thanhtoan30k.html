@@ -25,16 +25,16 @@
         function updateThanhToan() {
 
 
-            const thanhToanRef = database.ref('thanh_toan_30k'); // Đường dẫn đến node 'thanh toan'
+            const thanhToanRef = database.ref('thanh_toan_100k'); // Đường dẫn đến node 'thanh toan'
 
             thanhToanRef.set(1)
                 .then(() => {
                     document.getElementById('status').innerText = 'Thanh toán đã được cập nhật thành công!';
-                    console.log("Giá trị 'thanh_toan_30k' đã được cập nhật thành 1.");
+                    console.log("Giá trị đã được cập nhật thành công.");
                 })
                 .catch((error) => {
                     document.getElementById('status').innerText = 'Lỗi khi cập nhật thanh toán: ' + error.message;
-                    console.error("Lỗi khi cập nhật giá trị 'thanh_toan_30k':", error);
+                    console.error("Lỗi khi cập nhật giá trị thanh toán:", error);
                 });
         }
 
