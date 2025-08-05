@@ -25,7 +25,7 @@
         function updateThanhToan() {
            
 
-            const thanhToanRef = database.ref('thanh_toan_100k'); // Đường dẫn đến node 'thanh toan'
+            const thanhToanRef = database.ref('thanh_toan'); // Đường dẫn đến node 'thanh toan'
 
             thanhToanRef.set(1)
                 .then(() => {
@@ -34,7 +34,7 @@
                 })
                 .catch((error) => {
                     document.getElementById('status').innerText = 'Lỗi khi cập nhật thanh toán: ' + error.message;
-                    console.error("Lỗi khi cập nhật giá trị 'thanh_toan_100k':", error);
+                    console.error("Lỗi khi cập nhật giá trị 'thanh_toan':", error);
                 });
         }
 
@@ -48,3 +48,4 @@
     <p>Nếu bạn thấy thông báo lỗi, hãy kiểm tra kết nối internet và quyền truy cập.</p>
 </body>
 </html>
+
